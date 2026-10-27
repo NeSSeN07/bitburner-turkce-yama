@@ -1,0 +1,168 @@
+================================================================
+STEAM REHBERI — FORM ALANLARI
+================================================================
+
+BASLIK:
+Bitburner Türkçe Yama — Kurulum Rehberi (Topluluk Çevirisi)
+
+DIL:
+Türkçe
+
+KATEGORI (işaretle):
+[x] Modding or Configuration
+(istersen ek olarak: Gameplay Basics)
+
+ACIKLAMA (rehber tanımı):
+Bitburner'ı Türkçe oynamak için topluluk yaması. Oyunun resmi dil desteği
+olmadığından bu yama, oyun dosyasındaki İngilizce metinleri güvenli şekilde
+Türkçeleştirir. Rehberde kurulum, güncelleme sonrası yeniden uygulama ve sık
+sorulan sorular yer alıyor.
+
+TEMSILI RESIM ONERISI (195x195+ kare):
+Oyunun yeşil terminal temasıyla uyumlu, siyah arka plan üzerine yeşil yazıyla
+"BITBURNER / TÜRKÇE YAMA" yazan basit bir kapak. (Oyunun kendi terminal
+görüntüsünden bir kare de olur.)
+
+
+================================================================
+REHBER GOVDESI — Aşağıdaki metni Steam rehber editörüne YAPIŞTIR
+(Steam BBCode etiketleri kullanır)
+================================================================
+
+[h1]Bitburner Türkçe Yama[/h1]
+
+Bu rehber, [b]Bitburner[/b] oyununu Türkçe oynamanı sağlayan topluluk yamasının
+nasıl kurulacağını anlatır. Yama ücretsizdir ve açık kaynaktır.
+
+[b]Amaç:[/b] Türk oyunculara faydası dokunmak. Bitburner açık kaynak bir oyundur;
+bu yama oyunun İngilizce metinlerini Türkçe ile değiştirir.
+
+[hr][/hr]
+
+[h1]Önce bunları bil (önemli)[/h1]
+
+[list]
+[*][b]Oyunun resmi dil desteği YOK.[/b] Çoğu oyunun aksine Bitburner'da
+hazır bir dil dosyası bulunmaz. Tüm İngilizce metin, oyunun derlenmiş ana
+dosyasına ([i]main.bundle.js[/i]) gömülüdür. Bu yüzden yama, o dosyadaki
+metinleri Türkçe karşılıklarıyla güvenli şekilde değiştirir.
+[*][b]Oyun güncellemesi yamayı siler.[/b] Steam her güncellemede ana dosyayı
+yeniden indirir. Güncellemeden sonra yamayı [b]tekrar uygulaman[/b] gerekir
+(aşağıda anlatılıyor).
+[*][b]Kapsam kısmidir.[/b] Bu sürüm arayüzün büyük kısmını, yaygın mesajları ve
+bir dizi augmentation / hikaye / Corporation / Go açıklamasını çevirir. Oyun
+içi programlama (NS API) dokümanları gibi çok teknik metinler İngilizce kalır.
+[*][b]Terim politikası: Karma.[/b] Yerleşik teknik terimler ve özel adlar
+İngilizce bırakılır ([i]Hacking, Terminal, Faction, Augmentation, Bladeburner,
+Gang, Corporation, Hacknet, Sleeve, Stock, BitNode, Source-File, Go, RAM,
+script, server, hash[/i] ve tüm fraksiyon/şirket/şehir adları). Cümleler,
+etiketler ve açıklamalar Türkçeye çevrilir.
+[*][b]Kayıt (save) güvenliği:[/b] Özel adlar ve kayıt içinde saklanan değerler
+İngilizce bırakıldığından mevcut oyun kaydın etkilenmez.
+[/list]
+
+[hr][/hr]
+
+[h1]Gereksinimler[/h1]
+
+[list]
+[*][b]Python 3[/b] — ek paket gerekmez.
+  [list]
+  [*]Windows: [url=https://www.python.org/downloads/]python.org[/url] adresinden kur
+  (kurulumda [i]"Add Python to PATH"[/i] kutusunu işaretle).
+  [*]Linux: çoğu dağıtımda zaten kuruludur ([i]python3 --version[/i] ile bak).
+  [/list]
+[*][b]Yama dosyaları[/b] — indirme linki: [b][İNDİRME LİNKİNİ BURAYA KOY][/b]
+(örn. GitHub release ya da bir arşiv). İçinde [i]patch.py[/i] ve [i]sozluk[/i]
+klasörü bulunur.
+[/list]
+
+[hr][/hr]
+
+[h1]Adım 1 — Oyun klasörünü bul[/h1]
+
+Steam kütüphanesinde [b]Bitburner[/b]'a sağ tıkla →
+[b]Yönet[/b] → [b]Yerel dosyalara göz at[/b].
+
+Açılan klasörde sırasıyla şu yola git:
+[code]resources\app\dist\main.bundle.js[/code]
+
+Yamanın değiştireceği dosya budur. Tipik tam yollar:
+
+[b]Windows:[/b]
+[code]C:\Program Files (x86)\Steam\steamapps\common\Bitburner\resources\app\dist\main.bundle.js[/code]
+
+[b]Linux:[/b]
+[code]~/.steam/steam/steamapps/common/Bitburner/resources/app/dist/main.bundle.js[/code]
+[i](Kütüphanen başka diskteyse yol farklı olabilir, ör. /opt/SteamLibrary/...)[/i]
+
+[hr][/hr]
+
+[h1]Adım 2 — Yamayı uygula[/h1]
+
+Yama dosyalarını (patch.py + sozluk klasörü) bir yere çıkar, o klasörde bir
+terminal / komut istemi aç.
+
+[b]Durumu kontrol et[/b] (yama uygulanmış mı, dosya bulunuyor mu):
+[code]python3 patch.py durum[/code]
+
+[b]Denemek için — hiçbir şeyi değiştirmeden ne olacağını gör:[/b]
+[code]python3 patch.py uygula --kuru --ayrintili[/code]
+
+[b]Yamayı uygula[/b] (ilk çalıştırmada otomatik olarak yedek alır):
+[code]python3 patch.py uygula[/code]
+
+Oyun klasörün farklı bir yoldaysa, dosyayı elle verebilirsin:
+[code]python3 patch.py --bundle "C:\Program Files (x86)\Steam\steamapps\common\Bitburner\resources\app\dist\main.bundle.js" uygula[/code]
+
+[i]Not: Windows'ta "python3" çalışmazsa "python" dene.[/i]
+
+Bittiğinde oyunu başlat — arayüz Türkçe görünecek.
+
+[hr][/hr]
+
+[h1]Adım 3 — Geri almak istersen[/h1]
+
+İki yol var:
+
+[list]
+[*][b]Araçla:[/b] [code]python3 patch.py geri-al[/code] (yedekten orijinali geri yükler)
+[*][b]Steam ile:[/b] Bitburner'a sağ tıkla → [b]Özellikler[/b] → [b]Yüklü Dosyalar[/b]
+→ [b]Oyun dosyalarının bütünlüğünü doğrula[/b]. Steam bozulan/değişen dosyayı
+yeniden indirir.
+[/list]
+
+[hr][/hr]
+
+[h1]Oyun güncellendikten sonra[/h1]
+
+Steam oyunu güncellediğinde yama silinir (dosya yeniden indirilir). Tekrar
+Türkçe yapmak için sadece şunu çalıştır:
+[code]python3 patch.py uygula[/code]
+
+[hr][/hr]
+
+[h1]Sık Sorulan Sorular[/h1]
+
+[b]Oyunu bozar mı?[/b]
+Hayır. Yama yalnızca ekranda görünen metinleri değiştirir; kodu/mantığı değil.
+Uygulamadan önce orijinal dosyanın yedeği alınır ve yamalı dosyanın geçerli
+olduğu doğrulanmıştır. İstediğin an geri alabilirsin.
+
+[b]Çok oyunculu / VAC riski var mı?[/b]
+Bitburner tek kişilik bir oyundur, VAC yoktur. Yama yalnızca kendi bilgisayarındaki
+yerel dosyayı değiştirir.
+
+[b]Her şey Türkçe değil, neden?[/b]
+Oyunda çok büyük miktarda metin var (özellikle programlama dokümanları). Bu
+topluluk çevirisi önce en çok görünen kısımları kapsar ve zamanla genişler.
+
+[b]Katkıda bulunabilir miyim?[/b]
+Evet! Çeviriler [i]sozluk[/i] klasöründeki JSON dosyalarındadır ve kolayca
+genişletilebilir. Eksik/yanlış çeviri bildirmek veya eklemek için yama sayfasındaki
+bağlantıyı kullan.
+
+[hr][/hr]
+
+[i]Bu bir topluluk çevirisidir, resmi değildir. Bitburner ve tüm hakları
+geliştiricilerine aittir.[/i]

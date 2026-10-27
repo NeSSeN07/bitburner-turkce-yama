@@ -1,0 +1,15 @@
+# Yama yedekleri (oyun dosyasinin yedegi; depoya girmemeli)
+*.tr-backup
+
+# Python
+__pycache__/
+*.pyc
+
+# Gecici cikti
+extracted/
+*.copy.js
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
