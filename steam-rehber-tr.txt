@@ -13,10 +13,14 @@ KATEGORI (işaretle):
 (istersen ek olarak: Gameplay Basics)
 
 ACIKLAMA (rehber tanımı):
-Bitburner'ı Türkçe oynamak için topluluk yaması. Oyunun resmi dil desteği
-olmadığından bu yama, oyun dosyasındaki İngilizce metinleri güvenli şekilde
-Türkçeleştirir. Rehberde kurulum, güncelleme sonrası yeniden uygulama ve sık
-sorulan sorular yer alıyor.
+Bitburner'ı Türkçe oynamak için ücretsiz ve açık kaynak topluluk yaması. Oyunun
+resmi dil desteği olmadığından, küçük bir Python aracı oyun dosyasındaki İngilizce
+metinleri güvenle Türkçeleştirir: tek komut, otomatik yedek ve istediğin an geri
+alma. Arayüz, yaygın mesajlar ve bir dizi augmentation/hikaye/Corporation/Go
+açıklaması Türkçedir. Dosyalar GitHub'da:
+github.com/NeSSeN07/bitburner-turkce-yama — bu rehber adım adım kurulumu,
+güncelleme sonrası yeniden uygulamayı ve sık sorulanları anlatır.
+(Not: Steam her oyun güncellemesinde yamayı siler; tek komutla tekrar uygulanır.)
 
 TEMSILI RESIM ONERISI (195x195+ kare):
 Oyunun yeşil terminal temasıyla uyumlu, siyah arka plan üzerine yeşil yazıyla
