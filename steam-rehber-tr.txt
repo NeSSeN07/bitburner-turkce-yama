@@ -72,7 +72,7 @@ etiketler ve açıklamalar Türkçeye çevrilir.
   (kurulumda [i]"Add Python to PATH"[/i] kutusunu işaretle).
   [*]Linux: çoğu dağıtımda zaten kuruludur ([i]python3 --version[/i] ile bak).
   [/list]
-[*][b]Yama dosyaları[/b] — indirme linki: [b][İNDİRME LİNKİNİ BURAYA KOY][/b]
+[*][b]Yama dosyaları[/b] — indirme linki: [b]https://github.com/NeSSeN07/bitburner-turkce-yama (yeşil "Code" > "Download ZIP")[/b]
 (örn. GitHub release ya da bir arşiv). İçinde [i]patch.py[/i] ve [i]sozluk[/i]
 klasörü bulunur.
 [/list]
